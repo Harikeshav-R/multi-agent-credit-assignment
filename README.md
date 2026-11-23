@@ -50,7 +50,9 @@ For each skill $s$ over active episodes $U_s$:
 - **Individual Attribution (observational usage conditioning):**
   $$\text{Individual}(s) = \frac{1}{|U_s|} \sum_{i \in U_s} \text{success}_i$$
 - **Ablation Attribution (counterfactual difference):**
-  $$\text{Ablation}(s) = \frac{1}{|U_s|} \sum_{i \in U_s} \left(\text{success}_i - \text{without\_s}_i\right)$$
+  $$\text{Ablation}(s) = \frac{1}{|U_s|} \sum_{i \in U_s} \left(\text{success}_i - \text{success}_i^{(-s)}\right)$$
+
+  where $\text{success}_i^{(-s)}$ is the paired counterfactual outcome with skill $s$ removed (`without_a` or `without_b` in `episodes.csv`).
 
 ## 4. Generated Artifacts
 

@@ -1,0 +1,69 @@
+{
+  "ablation_evaluations": 122385,
+  "episode_count_per_scenario_seed": 900,
+  "factual_evaluations": 81000,
+  "joint_sampling_probabilities": {
+    "additive": "uniform 1/9 across all (a,b) in {0,1,2}x{0,1,2}",
+    "confounded": "0.8 * [a=2 and b=1] + 0.2/9 across (a,b) in {0,1,2}x{0,1,2}",
+    "synergy": "uniform 1/9 across all (a,b) in {0,1,2}x{0,1,2}"
+  },
+  "missing_estimates_count": 0,
+  "no_skill_intervention": "Action of active agent replaced by 0; teammate action and outcome noise u held fixed.",
+  "python_version": "3.15.2 (main, Oct 25 2026, 16:57:51) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "rank_reversal_counts": {
+    "a1_over_a2_ablation": 30,
+    "a2_over_a1_individual": 26,
+    "both_simultaneous": 26,
+    "total_seeds": 30
+  },
+  "reward_formulas": {
+    "additive": "p(a,b) = 0.10 + 0.20[a=1] - 0.05[a=2] + 0.30[b=1]",
+    "confounded": "p(a,b) = 0.10 + 0.20[a=1] + 0.50[b=1]",
+    "synergy": "p(a,b) = 0.10 + 0.60[a=1 and b=1] - 0.05[a=2]"
+  },
+  "scenarios": [
+    "additive",
+    "synergy",
+    "confounded"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "shared_noise_coupling": "Outcome success = int(u < p(a,b)); counterfactual without agent = int(u < p(0,b)) using same uniform u.",
+  "skills": [
+    "A1",
+    "A2",
+    "B1",
+    "B2"
+  ],
+  "total_evaluations": 203385
+}
